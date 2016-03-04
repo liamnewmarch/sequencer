@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ViewController as ctrl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1">
+    <title> Sequencer </title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <control-panel
+      class="control-panel"
+      tempo="ctrl.settings.bpm"
+      sequence="ctrl.settings.sequence"
+      volume="ctrl.settings.masterVolume.value">
+    </control-panel>
+    <piano-roll
+      class="piano-roll"
+      sequence="ctrl.settings.sequence"
+      step="ctrl.settings.step">
+    </piano-roll>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/components/piano-roll.js"></script>
+    <script src="js/components/control-panel.js"></script>
+    <script src="js/controllers/view.js"></script>
+    <script src="js/services/notes.js"></script>
+    <script src="js/services/playback.js"></script>
+    <script src="js/services/settings.js"></script>
+    <script src="js/filters/percentage.js"></script>
+  </body>
+</html>

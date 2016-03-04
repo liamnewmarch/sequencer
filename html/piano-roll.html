@@ -1,0 +1,19 @@
+<div class="piano-roll__keys">
+  <div
+    class="piano-roll__key"
+    ng-repeat="note in ctrl.notes track by $index"
+    ng-class="{'piano-roll__key--natural': note.natural}">
+    {{ note.name }}
+  </div>
+</div>
+<div
+  class="piano-roll__step"
+  ng-repeat="(index, step) in ctrl.sequence track by index"
+  ng-class="{'piano-roll__step--active': ctrl.step === index}">
+  <div
+    class="piano-roll__cell"
+    ng-repeat="note in ctrl.notes track by $index"
+    ng-class="{'piano-roll__cell--active': note == step}"
+    ng-click="ctrl.toggle(index, note)">
+  </div>
+</div>

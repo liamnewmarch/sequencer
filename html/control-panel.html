@@ -1,0 +1,23 @@
+<div class="control-panel__item">
+  <button class="control-panel__button" ng-click="ctrl.playback.reset()"> ⇤ </button>
+  <button class="control-panel__button" ng-click="ctrl.playback.play()"> ► </button>
+  <button class="control-panel__button" ng-click="ctrl.playback.stop()"> ◼ </button>
+</div>
+<div class="control-panel__item">
+  <label class="control-panel__label">
+    Tempo: {{ ctrl.tempo }} BPM
+  </label>
+  <input type="range" min="0" max="1000" ng-model="ctrl.tempo">
+</div>
+<div class="control-panel__item">
+  <label class="control-panel__label">
+    Steps: {{ ctrl.sequence.length }}
+  </label>
+  <input type="range" min="1" max="16" ng-model="ctrl.sequence.length">
+</div>
+<div class="control-panel__item">
+  <label class="control-panel__label">
+    Master volume: {{ ctrl.volume | percentage }}
+  </label>
+  <input type="range" min="0" max="1" step="0.01" ng-model="ctrl.volume">
+</div>

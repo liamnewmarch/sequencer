@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #333;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 12px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.control-panel {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.control-panel__button {
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: .5rem 1rem;
+}
+
+.control-panel__button:hover {
+  background: rgba(0, 0, 0, .1);
+}
+
+.control-panel__label {
+  vertical-align: 3px;
+}
+
+.piano-roll {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.piano-roll__keys,
+.piano-roll__step {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+}
+
+.piano-roll__step--active {
+  background: #222;
+}
+
+.piano-roll__key,
+.piano-roll__cell {
+  border: 1px solid;
+  border-color: transparent #444 #444 transparent;
+  flex: 1 0 auto;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.piano-roll__key--natural {
+  background: #ddd;
+  color: #333;
+}
+
+.piano-roll__cell:hover {
+  border-color: #fff;
+}
+
+.piano-roll__cell--active {
+  background: #fff;
+  color: #333;
+  position: relative;
+}
+
+.piano-roll__cell--active:hover {
+  opacity: .5;
+}
