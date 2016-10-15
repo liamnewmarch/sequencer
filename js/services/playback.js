@@ -29,7 +29,7 @@
     function play() {
       const note = settings.sequence[settings.step];
       gain.gain.value = 0.1;
-      osc.frequency.setValueAtTime(note ? note.frequency : 0, 0);
+      osc.frequency.setValueAtTime(note ? note.frequency : 0, audio.currentTime);
       timeout = $timeout(nextStep, 60000 /  settings.bpm);
     }
 
