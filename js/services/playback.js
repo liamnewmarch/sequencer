@@ -16,7 +16,7 @@
     gain.gain.value = 0;
     osc.start(0);
 
-    settings.masterVolume = gain.gain;
+    settings.masterVolume = 0.1;
 
     function nextStep() {
       settings.step++;
@@ -28,7 +28,7 @@
 
     function play() {
       const note = settings.sequence[settings.step];
-      gain.gain.value = 0.1;
+      gain.gain.value = settings.masterVolume;
       osc.frequency.setValueAtTime(note ? note.frequency : 0, audio.currentTime);
       timeout = $timeout(nextStep, 60000 /  settings.bpm);
     }
